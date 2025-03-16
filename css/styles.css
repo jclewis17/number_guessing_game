@@ -46,8 +46,21 @@ h1 {
     display: none;
 }
 
+.overlayHeader {
+    font-size: 80px;
+}
+
 button {
-    color: red;
+    padding: 15px;
+    border-radius: 5px;
+    width: 10%;
+    font-size: 1.1em;
+
+    transition: opacity .3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
 }
 
 /* Main Game Page */
