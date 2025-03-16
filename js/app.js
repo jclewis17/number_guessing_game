@@ -27,4 +27,8 @@ closeRulesButton.addEventListener('click', () => {
     overlay.classList.remove('dim');
 });
 
+// Generates a random number between 0 and 99
+let randomTargetNumber = Math.floor(Math.random() * 100);
 
+
+console.log(randomTargetNumber)
