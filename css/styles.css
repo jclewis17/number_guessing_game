@@ -149,7 +149,6 @@ button:hover {
     cursor: pointer;
 }
 
-/* Adjust styling */
 .rules-overlay h2 {
     color: #fff;
     margin-top: 30px; 
@@ -177,20 +176,19 @@ footer {
     padding: 10px 0;
 }
 
-
+/* Media Queries */
 @media (max-width: 600px) {
-    /* Adjust styles for mobile devices or smaller screens */
     .rules-overlay {
-      width: 80%;           /* Make it wider relative to screen */
-      padding: 10px;        /* Reduce padding if desired */
+      width: 80%;          
+      padding: 10px;        
     }
   
     .overlayHeader {
-      font-size: 50px;      /* Scale down for smaller screens */
+      font-size: 50px;      
     }
   
     button {
-      width: 50%;           /* Make buttons more tappable */
+      width: 50%;           
       font-size: 1em;
     }
   }
