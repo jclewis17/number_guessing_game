@@ -18,11 +18,13 @@ startButton.addEventListener('click', () => {
 //How to Play Button
 rulesButton.addEventListener('click', () => {
     rulesOverlay.classList.add('active');
+    overlay.classList.add('dim');
 });
 
 //X Button to close the rules
 closeRulesButton.addEventListener('click', () => {
     rulesOverlay.classList.remove('active');
+    overlay.classList.remove('dim');
 });
 
 

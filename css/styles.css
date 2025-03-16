@@ -67,6 +67,11 @@ button:hover {
     opacity: 0.8;
 }
 
+#overlay.dim {
+    filter: brightness(0.3); /* 30% of normal brightness */
+    transition: filter 0.3s ease;
+  }
+
   /* Rules Overlay */
 .rules-overlay {
     position: fixed;
@@ -75,8 +80,8 @@ button:hover {
     transform: translate(-50%, -50%); 
     background-color: rgba(0, 0, 0, 1);
     width: 50%;
-    max-width: 600px;
-    padding: 20px;
+    max-width: 40%;
+    padding: 23px;
     box-sizing: border-box;
     border-radius: 5px;
     text-align: center;
@@ -87,23 +92,25 @@ button:hover {
     z-index: 999;       
 }
 
-.rules-overlay hr {
-    border: 0;
-    border-top: 1px dashed #ccc;
-    margin: 1.5em 0;
-  }
-
 .rules-overlay h2 {
     font-family: "Oswald", sans-serif;
     font-weight: 700; 
     color: #fff;
     margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .rules-overlay p {
     margin-bottom: 20px;
     line-height: 1.5;
 }
+
+.rules-overlay hr {
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 1.5em 0;
+  }
 
 .rules-overlay ul {
     margin: 0; 
@@ -169,3 +176,27 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+
+@media (max-width: 600px) {
+    /* Adjust styles for mobile devices or smaller screens */
+    .rules-overlay {
+      width: 80%;           /* Make it wider relative to screen */
+      padding: 10px;        /* Reduce padding if desired */
+    }
+  
+    .overlayHeader {
+      font-size: 50px;      /* Scale down for smaller screens */
+    }
+  
+    button {
+      width: 50%;           /* Make buttons more tappable */
+      font-size: 1em;
+    }
+  }
+
+  @media (max-width: 1261px) {
+    .rules-overlay {
+        max-width: 80%;
+    }
+  }
