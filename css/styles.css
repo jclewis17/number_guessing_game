@@ -24,7 +24,7 @@ h1 {
     color: white;
   }
 
-  /* Overlay */
+  /* Main Overlay */
   #overlay {
     position: fixed;
     top: 0;
@@ -59,9 +59,100 @@ button {
     transition: opacity .3s ease;
 }
 
+button.btn_reset {
+    margin-bottom: 30px;
+}
+
 button:hover {
     opacity: 0.8;
 }
+
+  /* Rules Overlay */
+.rules-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 1);
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+
+    opacity: 0;  
+    pointer-events: none;       
+    transition: opacity .3s ease; 
+    z-index: 999;       
+}
+
+.rules-overlay hr {
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 1.5em 0;
+  }
+
+.rules-overlay h2 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700; 
+    color: #fff;
+    margin-top: 30px;
+}
+
+.rules-overlay p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.rules-overlay ul {
+    margin: 0; 
+    padding: 0;         
+    text-align: center;
+}
+
+.rules-overlay li {
+    line-height: 2;
+    list-style: none;
+}
+
+.rules-overlay.active {
+    opacity: 1;         
+    pointer-events: auto; 
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    background: transparent;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Adjust styling */
+.rules-overlay h2 {
+    color: #fff;
+    margin-top: 30px; 
+}
+
+.rules-overlay p,
+.rules-overlay ul {
+    color: #fff;
+}
+
 
 /* Main Game Page */
 .main-container {
