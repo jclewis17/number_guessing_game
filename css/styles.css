@@ -68,7 +68,7 @@ button:hover {
 }
 
 #overlay.dim {
-    filter: brightness(0.3); /* 30% of normal brightness */
+    filter: brightness(0.3); 
     transition: filter 0.3s ease;
   }
 
