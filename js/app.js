@@ -31,10 +31,21 @@ let wrongGuessCounter = 0;
 
 // Generates a random number between 0 and 99
 let randomTargetNumber = Math.floor(Math.random() * 100);
+console.log(randomTargetNumber);
 
 // Handles the players guess and checks it against the randomly generated number
 submitButton.addEventListener('click', () => {
     let userGuess = parseInt(textInput.value);
+
+    if (wrongGuessCounter >= 4) {
+        if (userGuess > randomTargetNumber) {
+            console.log("Lower", userGuess)
+        } else {
+            console.log("Higher", userGuess)
+        }
+        console.log(`You ran out of guesses. The random number was ${randomTargetNumber}`)
+        return;
+    }
 
     textInput.value = '';
 
