@@ -4,8 +4,10 @@ const rulesButton = document.querySelector('.rules');
 const overlay = document.querySelector('#overlay');
 const rulesOverlay = document.querySelector('#rulesOverlay'); 
 const closeRulesButton = document.querySelector('#closeRules'); 
+const submitButton = document.querySelector('input[type="submit"]');
 const gameContainer = document.querySelector('.main-container');
 const footer = document.querySelector('#pageFooter');
+let textInput = document.querySelector('input[type="text"]');
 let wrongGuessCounter = 0;
 
 //Start Button on Main Overlay
@@ -32,3 +34,8 @@ let randomTargetNumber = Math.floor(Math.random() * 100);
 
 
 console.log(randomTargetNumber)
+
+submitButton.addEventListener('clcik', () => {
+    
+});
+
