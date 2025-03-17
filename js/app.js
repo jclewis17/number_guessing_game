@@ -11,20 +11,20 @@ let textInput = document.querySelector('input[type="text"]');
 let wrongGuessCounter = 0;
 
 //Start Button on Main Overlay
-startButton.addEventListener('click', () => {
+    startButton.addEventListener('click', () => {
     overlay.classList.add('hidden');
     footer.classList.add('hidden');
     gameContainer.style.display = 'block';
 });
 
 //How to Play Button
-rulesButton.addEventListener('click', () => {
+    rulesButton.addEventListener('click', () => {
     rulesOverlay.classList.add('active');
     overlay.classList.add('dim');
 });
 
 //X Button to close the rules
-closeRulesButton.addEventListener('click', () => {
+    closeRulesButton.addEventListener('click', () => {
     rulesOverlay.classList.remove('active');
     overlay.classList.remove('dim');
 });
@@ -32,10 +32,23 @@ closeRulesButton.addEventListener('click', () => {
 // Generates a random number between 0 and 99
 let randomTargetNumber = Math.floor(Math.random() * 100);
 
+// Handles the players guess and checks it against the randomly generated number
+submitButton.addEventListener('click', () => {
+    let userGuess = parseInt(textInput.value);
 
-console.log(randomTargetNumber)
+    textInput.value = '';
 
-submitButton.addEventListener('clcik', () => {
-    
+    if (isNaN(userGuess) || userGuess < 0 || userGuess > 99) {
+        alert("That is not a vlid guess. Your guess must be a number between 0 and 99.");
+        return;
+    }
+
+    if (userGuess > randomTargetNumber) {
+        console.log("Lower", userGuess);
+    } else if (userGuess < randomTargetNumber) {
+        console.log("Higher", userGuess);
+    } else {
+        console.log("You guessed the number!", userGuess);
+    }
 });
 
