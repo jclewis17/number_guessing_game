@@ -40,15 +40,21 @@ submitButton.addEventListener('click', () => {
 
     if (isNaN(userGuess) || userGuess < 0 || userGuess > 99) {
         alert("That is not a vlid guess. Your guess must be a number between 0 and 99.");
+        console.log(wrongGuessCounter);
         return;
     }
 
     if (userGuess > randomTargetNumber) {
         console.log("Lower", userGuess);
+        wrongGuessCounter++;
+        console.log(wrongGuessCounter);
     } else if (userGuess < randomTargetNumber) {
         console.log("Higher", userGuess);
+        wrongGuessCounter++;
+        console.log(wrongGuessCounter);;
     } else {
         console.log("You guessed the number!", userGuess);
+        console.log(wrongGuessCounter);;
     }
 });
 
