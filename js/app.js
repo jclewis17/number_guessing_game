@@ -37,7 +37,7 @@ console.log(randomTargetNumber);
 submitButton.addEventListener('click', () => {
     let userGuess = parseInt(textInput.value);
 
-    if (wrongGuessCounter >= 4) {
+    if (wrongGuessCounter >= 4 && userGuess !== randomTargetNumber) {
         if (userGuess > randomTargetNumber) {
             console.log("Lower", userGuess)
         } else {
