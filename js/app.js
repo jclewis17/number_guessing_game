@@ -62,6 +62,7 @@ submitButton.addEventListener('click', () => {
         wrongGuessCounter++;
         textInput.value = '';
         addGuessToScreen(userGuess);
+        alert(`You rand out of guesses. The correct number was ${randomTargetNumber}`);
         if (userGuess > randomTargetNumber) {
             console.log("Lower", userGuess)
         } else {
@@ -93,5 +94,12 @@ submitButton.addEventListener('click', () => {
         wrongGuessCounter++;
         addGuessToScreen(userGuess);
     }
+
+    if (userGuess === randomTargetNumber) {
+        alert("You win");
+    }
 });
 
+
+// Handles end game results
+ 
