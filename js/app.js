@@ -66,6 +66,8 @@ submitButton.addEventListener('click', () => {
         endGameHeader.classList.remove('endGameHeader-hidden');
         endGameHeader.classList.add('endGameHeader-appear');
         endGameHeader.textContent = `You ran out of guesses. The random number was ${randomTargetNumber}`; // Handles end game results for loss
+        submitButton.disabled = true;
+        textInput.disabled = true;
         if (userGuess > randomTargetNumber) {
             console.log("Lower", userGuess)
         } else {
@@ -104,8 +106,9 @@ submitButton.addEventListener('click', () => {
     if (userGuess === randomTargetNumber) {
         endGameHeader.classList.remove('endGameHeader-hidden');
         endGameHeader.classList.add('endGameHeader-appear');
-
         endGameHeader.textContent = "Congrats. You Win!";
+        submitButton.disabled = true;
+        textInput.disabled = true;
     }
 });
 
