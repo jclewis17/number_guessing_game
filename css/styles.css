@@ -315,6 +315,21 @@ footer {
         width: 80%;
         font-size: 1.1em;
     }
+
+    .endGameHeader-appear {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2.2em;
+        border-top: 3px dashed black;
+        width: 97%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        padding-top: 15px;
+        text-align: center;
+    }
   }
 
   @media (max-width: 1261px) {
