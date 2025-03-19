@@ -213,14 +213,21 @@ input[type="submit"] {
 }
 
 /* Game Results */
-.results-header-appear {
+.endGameHeader-appear {
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 2.2em;
+    border-top: 3px dashed black;
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding-top: 15px;
 }
 
-.results-header-hidden {
+.endGameHeader-hidden {
     display: none;
 }
 

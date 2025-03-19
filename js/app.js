@@ -8,6 +8,7 @@ const submitButton = document.querySelector('input[type="submit"]');
 const gameContainer = document.querySelector('.main-container');
 const footer = document.querySelector('#pageFooter');
 let textInput = document.querySelector('input[type="text"]');
+const endGameHeader = document.querySelector('h3');
 const body = document.querySelector('body');
 let wrongGuessCounter = 0;
 
@@ -62,7 +63,9 @@ submitButton.addEventListener('click', () => {
         wrongGuessCounter++;
         textInput.value = '';
         addGuessToScreen(userGuess);
-        alert(`You rand out of guesses. The correct number was ${randomTargetNumber}`);
+        endGameHeader.classList.remove('endGameHeader-hidden');
+        endGameHeader.classList.add('endGameHeader-appear');
+        endGameHeader.textContent = `You ran out of guesses. The random number was ${randomTargetNumber}`; // Handles end game results for loss
         if (userGuess > randomTargetNumber) {
             console.log("Lower", userGuess)
         } else {
@@ -72,14 +75,16 @@ submitButton.addEventListener('click', () => {
         return;
     }
 
-    textInput.value = '';
+    textInput.value = ''; // Resets input
 
+    // Checks if valid number is guessed
     if (isNaN(userGuess) || userGuess < 0 || userGuess > 99) {
         alert("That is not a vlid guess. Your guess must be a number between 0 and 99.");
         console.log(wrongGuessCounter);
         return;
     }
-
+    
+    // Checks if number is too high, too low or correct
     if (userGuess > randomTargetNumber) {
         console.log("Lower", userGuess);
         wrongGuessCounter++;
@@ -95,11 +100,15 @@ submitButton.addEventListener('click', () => {
         addGuessToScreen(userGuess);
     }
 
+    // Handles end game results for win
     if (userGuess === randomTargetNumber) {
-        alert("You win");
+        endGameHeader.classList.remove('endGameHeader-hidden');
+        endGameHeader.classList.add('endGameHeader-appear');
+
+        endGameHeader.textContent = "Congrats. You Win!";
     }
 });
 
 
-// Handles end game results
+
  
