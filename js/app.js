@@ -62,9 +62,7 @@ submitButton.addEventListener('click', () => {
     let userGuess = parseInt(textInput.value);
 
     if (wrongGuessCounter >= 4 && userGuess !== randomTargetNumber) {
-        wrongGuessCounter++;
         textInput.value = '';
-        addGuessToScreen(userGuess);
         endGameHeader.classList.remove('endGameHeader-hidden');
         endGameHeader.classList.add('endGameHeader-appear');
         endGameHeader.textContent = `You ran out of guesses. The random number was ${randomTargetNumber}`; // Handles end game results for loss
@@ -103,6 +101,14 @@ submitButton.addEventListener('click', () => {
         endGameButtons.classList.remove('hidden');
     }
 });
+
+textInput.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevents accidental form submission (if applicable)
+        submitButton.click(); // Triggers the click event on the submit button
+    }
+});
+
 
 
 // Resets the game when clicked
