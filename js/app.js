@@ -9,6 +9,7 @@ const gameContainer = document.querySelector('.main-container');
 const footer = document.querySelector('#pageFooter');
 let textInput = document.querySelector('input[type="text"]');
 const endGameHeader = document.querySelector('h3');
+const endGameButtons = document.querySelector('.endGameButtons');
 const body = document.querySelector('body');
 let wrongGuessCounter = 0;
 
@@ -109,6 +110,7 @@ submitButton.addEventListener('click', () => {
         endGameHeader.textContent = "Congrats. You Win!";
         submitButton.disabled = true;
         textInput.disabled = true;
+        endGameButtons.classList.remove('hidden');
     }
 });
 

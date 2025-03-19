@@ -24,6 +24,10 @@ h1 {
     color: white;
   }
 
+  .hidden {
+    display: none;
+  }
+
 /******************************** 
 MAIN MENU/LANDING PAGE 
 ********************************/
@@ -231,7 +235,31 @@ input[type="submit"] {
     display: none;
 }
 
+/* End game Buttons */
+.endGameButtons.hidden {
+    display: none;
+}
 
+.endGameButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+#playAgain {
+    padding: 15px;
+    border-radius: 5px;
+    width: 8%;
+    font-size: 1.1em;
+}
+
+#mainMenu {
+    padding: 15px;
+    border-radius: 5px;
+    width: 8%;
+    font-size: 1.1em;
+}
 
 
 
