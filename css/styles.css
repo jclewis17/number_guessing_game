@@ -24,6 +24,10 @@ h1 {
     color: white;
   }
 
+/******************************** 
+MAIN MENU/LANDING PAGE 
+********************************/
+
   /* Main Overlay */
   #overlay {
     position: fixed;
@@ -159,8 +163,12 @@ button:hover {
     color: #fff;
 }
 
+/******************************** 
+MAIN GAME PAGE 
+********************************/
 
-/* Main Game Page */
+
+/* Heading */
 .main-container {
     display: none;
 }
@@ -183,7 +191,31 @@ input[type="submit"] {
     box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
-/* Footer */
+/* Guess History */
+#guessHistory {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;                
+    margin-top: 20px;     
+    color: white;           
+}
+
+.guess-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 2.2em;
+    width: fit-content; 
+}
+
+
+
+
+
+
+/******************************** 
+FOOTER
+********************************/
 footer {
     position: absolute;
     bottom: 0;

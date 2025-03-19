@@ -10,6 +10,15 @@ const footer = document.querySelector('#pageFooter');
 let textInput = document.querySelector('input[type="text"]');
 let wrongGuessCounter = 0;
 
+// Functions
+function addGuessToScreen(guess) {
+    let guessHistoryDiv = document.querySelector('#guessHistory');
+    let newGuess = document.createElement('p');
+    newGuess.textContent = `${wrongGuessCounter}. Guess: ${guess}`;
+    newGuess.classList.add('guess-item');
+    guessHistoryDiv.appendChild(newGuess);
+}
+
 //Start Button on Main Overlay
     startButton.addEventListener('click', () => {
     overlay.classList.add('hidden');
@@ -38,6 +47,9 @@ submitButton.addEventListener('click', () => {
     let userGuess = parseInt(textInput.value);
 
     if (wrongGuessCounter >= 4 && userGuess !== randomTargetNumber) {
+        wrongGuessCounter++;
+        textInput.value = '';
+        addGuessToScreen(userGuess);
         if (userGuess > randomTargetNumber) {
             console.log("Lower", userGuess)
         } else {
@@ -59,13 +71,16 @@ submitButton.addEventListener('click', () => {
         console.log("Lower", userGuess);
         wrongGuessCounter++;
         console.log(wrongGuessCounter);
+        addGuessToScreen(userGuess);
     } else if (userGuess < randomTargetNumber) {
         console.log("Higher", userGuess);
         wrongGuessCounter++;
-        console.log(wrongGuessCounter);;
+        console.log(wrongGuessCounter);
+        addGuessToScreen(userGuess);
     } else {
         console.log("You guessed the number!", userGuess);
-        console.log(wrongGuessCounter);;
+        console.log(wrongGuessCounter);
+        addGuessToScreen(userGuess);
     }
 });
 
