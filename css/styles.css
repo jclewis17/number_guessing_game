@@ -175,6 +175,7 @@ MAIN GAME PAGE
 /* Heading */
 .main-container {
     display: none;
+    padding-bottom: 50px;
 }
 
 #inputTracker {
@@ -245,6 +246,7 @@ input[type="submit"] {
     flex-direction: row;
     gap: 20px;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 #playAgain {

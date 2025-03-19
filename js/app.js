@@ -69,6 +69,7 @@ submitButton.addEventListener('click', () => {
         endGameHeader.textContent = `You ran out of guesses. The random number was ${randomTargetNumber}`; // Handles end game results for loss
         submitButton.disabled = true;
         textInput.disabled = true;
+        endGameButtons.classList.remove('hidden');
         if (userGuess > randomTargetNumber) {
             console.log("Lower", userGuess)
         } else {
