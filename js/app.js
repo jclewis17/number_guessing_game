@@ -56,7 +56,6 @@ function addGuessToScreen(guess) {
 
 // Generates a random number between 0 and 99
 let randomTargetNumber = Math.floor(Math.random() * 100);
-console.log(randomTargetNumber);
 
 // Handles the players guess and checks it against the randomly generated number
 submitButton.addEventListener('click', () => {
@@ -72,13 +71,6 @@ submitButton.addEventListener('click', () => {
         submitButton.disabled = true;
         textInput.disabled = true;
         endGameButtons.classList.remove('hidden');
-        if (userGuess > randomTargetNumber) {
-            console.log("Lower", userGuess)
-        } else {
-            console.log("Higher", userGuess)
-        }
-        console.log(`You ran out of guesses. The random number was ${randomTargetNumber}`)
-        return;
     }
 
     textInput.value = ''; // Resets input
@@ -86,20 +78,15 @@ submitButton.addEventListener('click', () => {
     // Checks if valid number is guessed
     if (isNaN(userGuess) || userGuess < 0 || userGuess > 99) {
         alert("That is not a vlid guess. Your guess must be a number between 0 and 99.");
-        console.log(wrongGuessCounter);
         return;
     }
     
     // Checks if number is too high, too low or correct
     if (userGuess > randomTargetNumber) {
-        console.log("Lower", userGuess);
         wrongGuessCounter++;
-        console.log(wrongGuessCounter);
         addGuessToScreen(userGuess);
     } else if (userGuess < randomTargetNumber) {
-        console.log("Higher", userGuess);
         wrongGuessCounter++;
-        console.log(wrongGuessCounter);
         addGuessToScreen(userGuess);
     } else {
         wrongGuessCounter++;
@@ -117,6 +104,8 @@ submitButton.addEventListener('click', () => {
     }
 });
 
+
+// Resets the game when clicked
 playAgainButton.addEventListener('click', () => {
     endGameHeader.classList.add('endGameHeader-hidden');
     endGameHeader.classList.remove('endGameHeader-appear');
@@ -127,6 +116,23 @@ playAgainButton.addEventListener('click', () => {
     wrongGuessCounter = 0;
     document.querySelector('#guessHistory').innerHTML = '';
     randomTargetNumber = Math.floor(Math.random() * 100);
+});
+
+mainMenuButton.addEventListener('click', () => {
+    endGameHeader.classList.add('endGameHeader-hidden');
+    endGameHeader.classList.remove('endGameHeader-appear');
+    endGameHeader.textContent = "";
+    submitButton.disabled = false;
+    textInput.disabled = false;
+    endGameButtons.classList.add('hidden');
+    wrongGuessCounter = 0;
+    document.querySelector('#guessHistory').innerHTML = '';
+    randomTargetNumber = Math.floor(Math.random() * 100);
+
+    gameContainer.style.display = 'none';
+    overlay.classList.remove('hidden');
+    footer.classList.remove('hidden');
+    body.classList.remove('scrolling-active');    
 });
 
 
