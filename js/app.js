@@ -11,10 +11,20 @@ let textInput = document.querySelector('input[type="text"]');
 let wrongGuessCounter = 0;
 
 // Functions
+function lowerOrHigher(guess) {
+    if (guess > randomTargetNumber) {
+        return "Lower";
+    } else if (guess < randomTargetNumber) {
+        return "Higher";
+    } else {
+        return "Correct!";
+    }
+}
+
 function addGuessToScreen(guess) {
     let guessHistoryDiv = document.querySelector('#guessHistory');
     let newGuess = document.createElement('p');
-    newGuess.textContent = `${wrongGuessCounter}. Guess: ${guess}`;
+    newGuess.textContent = `${wrongGuessCounter}. ${guess} - ${lowerOrHigher(guess)}`;
     newGuess.classList.add('guess-item');
     guessHistoryDiv.appendChild(newGuess);
 }
@@ -78,8 +88,7 @@ submitButton.addEventListener('click', () => {
         console.log(wrongGuessCounter);
         addGuessToScreen(userGuess);
     } else {
-        console.log("You guessed the number!", userGuess);
-        console.log(wrongGuessCounter);
+        wrongGuessCounter++;
         addGuessToScreen(userGuess);
     }
 });
