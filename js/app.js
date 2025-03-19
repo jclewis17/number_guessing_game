@@ -1,4 +1,5 @@
 // Variables
+const body = document.querySelector('body');
 const startButton = document.querySelector('.btn_reset');
 const rulesButton = document.querySelector('.rules');
 const overlay = document.querySelector('#overlay');
@@ -10,7 +11,8 @@ const footer = document.querySelector('#pageFooter');
 let textInput = document.querySelector('input[type="text"]');
 const endGameHeader = document.querySelector('h3');
 const endGameButtons = document.querySelector('.endGameButtons');
-const body = document.querySelector('body');
+const playAgainButton = document.querySelector('#playAgain');
+const mainMenuButton = document.querySelector('#mainMenu');
 let wrongGuessCounter = 0;
 
 // Functions
@@ -113,6 +115,18 @@ submitButton.addEventListener('click', () => {
         textInput.disabled = true;
         endGameButtons.classList.remove('hidden');
     }
+});
+
+playAgainButton.addEventListener('click', () => {
+    endGameHeader.classList.add('endGameHeader-hidden');
+    endGameHeader.classList.remove('endGameHeader-appear');
+    endGameHeader.textContent = "";
+    submitButton.disabled = false;
+    textInput.disabled = false;
+    endGameButtons.classList.add('hidden');
+    wrongGuessCounter = 0;
+    document.querySelector('#guessHistory').innerHTML = '';
+    randomTargetNumber = Math.floor(Math.random() * 100);
 });
 
 
