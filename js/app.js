@@ -8,6 +8,7 @@ const submitButton = document.querySelector('input[type="submit"]');
 const gameContainer = document.querySelector('.main-container');
 const footer = document.querySelector('#pageFooter');
 let textInput = document.querySelector('input[type="text"]');
+const body = document.querySelector('body');
 let wrongGuessCounter = 0;
 
 // Functions
@@ -34,6 +35,7 @@ function addGuessToScreen(guess) {
     overlay.classList.add('hidden');
     footer.classList.add('hidden');
     gameContainer.style.display = 'block';
+    body.classList.add('scrolling-active');
 });
 
 //How to Play Button
